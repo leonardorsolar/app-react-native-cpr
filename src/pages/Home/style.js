@@ -28,10 +28,10 @@ export const styles = StyleSheet.create({
     },
 
     logo:{
-        width: 300,
-        height: 38,
+        width: 180,
+        height: 28,
         alignSelf: "center",
-        marginTop: 20,
+        marginTop:25,
     },
 
     containerHeader:{
