@@ -7,6 +7,8 @@ import { NavigationContainer } from '@react-navigation/native';
 
 import Login from '../pages/Login';
 import Home from '../pages/Home';
+import Pessoas from '../pages/Pessoas';
+import NovaPessoa from '../pages/NovaPessoa';
 
 const Stack = createNativeStackNavigator();
 
@@ -17,6 +19,8 @@ function StackNavigator(){
        <Stack.Navigator screenOptions={{headerShown: false}}>
         <Stack.Screen name="Login" component={Login} options={{ title: 'Login' }} />
         <Stack.Screen name="Home" component={Home} options={{ title: 'Home' }} /> 
+        <Stack.Screen name="Pessoas" component={Pessoas} options={{ title: 'Pessoas' }} /> 
+        <Stack.Screen name="NovaPessoa" component={NovaPessoa} options={{ title: 'NovaPessoa' }} />  
       </Stack.Navigator>
    
   );

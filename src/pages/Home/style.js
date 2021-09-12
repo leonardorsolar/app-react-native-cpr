@@ -38,6 +38,15 @@ export const styles = StyleSheet.create({
         marginTop:25,
     },
 
+    LogoText:{
+        
+        color: '#fff',
+        fontWeight: 'bold',
+        alignSelf: "center",
+        marginTop:25,
+        fontSize: 20,
+    },
+
     containerHeader:{
         flexDirection: 'row',
         justifyContent: "center",
@@ -99,20 +108,37 @@ export const styles = StyleSheet.create({
         alignSelf: "center"
     },
 
-    containerBox:{
-        width: '78%',
-        alignSelf: "center",
-        marginBottom: 25,
+    
+
+    CardHeader:{
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        padding: 20,
+        color: '#fff',
+        backgroundColor: '#72c600',
+        textAlign: 'center',
+        fontSize: 15,
+        borderTopLeftRadius: 4,
+        borderTopRightRadius: 4,
+        fontFamily: fonts.text,
     },
 
-    box:{
+    CardContainer:{
+        width: '78%',
+        alignSelf: "center",
+        paddingTop: 20, 
+        marginBottom: 30,
+
+    },
+
+    Card:{
         backgroundColor: '#72c600',
         justifyContent: 'space-between',
         flexDirection: 'row',
         padding: 15,
-        marginTop: 30,
-        borderTopLeftRadius: 15,
-        borderTopRightRadius: 15,
+        paddingTop: 20,
+        paddingBottom: 40, 
         shadowColor: 'rgba(0, 0, 0, 0.1)',
         shadowOpacity: 0.1,
         elevation: 5,
@@ -121,32 +147,62 @@ export const styles = StyleSheet.create({
         
     },
 
-    rText:{
-        fontSize: 20,
+    CardrText:{
+        fontSize: 15,
+        color: '#fff',
+        fontFamily: fonts.text,
+        alignSelf: "flex-end"
+    },
+
+    CardlText:{
+        fontSize: 15,
+        color: '#fff',
+        fontFamily: fonts.text,
+        alignSelf: "flex-start"
+    },
+
+
+
+    CardlTexthigh:{
+        fontSize: 30,
+        color: '#fff',
+        fontFamily: fonts.text,
+        
+    },
+
+    CardrTexthigh:{
+        flex: 1,
+        justifyContent: 'space-between',
+        fontSize: 30,
         color: '#fff',
         fontFamily: fonts.text,
     },
 
-    textFooter:{
-        borderTopColor: '#ccc',
-        paddingTop: 15, 
-        paddingBottom: 10, 
+    CardFooter:{
+        borderTopColor: '#fff',
+        paddingTop: 4, 
+        paddingBottom: 4, 
         borderTopWidth: 1,
         color: '#fff',
         backgroundColor: '#4f9b2a',
         textAlign: 'center',
         fontSize: 15,
-        borderBottomLeftRadius: 15,
-        borderBottomRightRadius: 15,
+        borderBottomLeftRadius: 4,
+        borderBottomRightRadius: 4,
         fontFamily: fonts.text,
     },
 
-    iconRegistered:{
+    CardiconRegistered:{
         justifyContent: 'center',
         alignSelf: 'center',
     },
 
-    textos:{
+    TextosStart:{
+        justifyContent: 'flex-start',
+        alignItems: 'flex-start',
+    },
+
+    TextosEnd:{
         justifyContent: 'flex-end',
         alignItems: 'flex-end',
     },
@@ -182,9 +238,20 @@ export const styles = StyleSheet.create({
 
     },
 
-    boxContainer:{
-        marginRight: 20,
-        width: 200,
-        marginLeft: 10,
-    }
+    containerFloat:{
+        bottom: 20,
+        right: 20,
+        position: 'absolute',
+        backgroundColor: 'green',
+        borderRadius: 10,
+        zIndex: 9,
+        width: 50,
+        height: 50,
+        justifyContent: "center",
+    },
+    CartButton:{
+        justifyContent: "center",
+        alignItems: "center",
+    },
+    
 })

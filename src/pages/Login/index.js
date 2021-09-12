@@ -33,7 +33,7 @@ import {
 
       return(
         <View style={styles.container}>
-        <StatusBar translucent hidden />
+        <StatusBar barStyle="light-content" />
   
         <Image style={styles.logo} source={require('../../assets/logo.png')} />
   

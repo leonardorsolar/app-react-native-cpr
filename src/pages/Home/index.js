@@ -13,7 +13,7 @@ import {
 } from 'react-native';
 
 
-import Icon from 'react-native-vector-icons/MaterialIcons'
+import Icon from 'react-native-vector-icons/MaterialIcons';
 import { styles } from './style';
 import { DrawerActions, useNavigation } from '@react-navigation/core';
 import { AnimatedCircularProgress } from 'react-native-circular-progress';
@@ -89,7 +89,10 @@ export default function Home() {
                             
                         </TouchableOpacity>
 
-                        <Image style={styles.logo} source={require('../../assets/logo3.png')} />
+
+                        <Text style={styles.LogoText}> CPT Controle EF</Text>
+                        
+                        
 
                     </View>
                 </View>
@@ -131,31 +134,47 @@ export default function Home() {
                             </AnimatedCircularProgress>
                     </View>
 
-                    <View style={styles.containerBox}>
+                    <View style={styles.CardContainer}>
 
                             <TouchableOpacity onPress={() => navigation.navigate("Pessoas")}>
                                 <View>
-                                    <View style={styles.box}>
-                                        <Icon style={styles.iconRegistered} name="people-alt" size={70} color="#fff" />
-                                        <View style={styles.textos}>
-                                            <Text style={styles.rText}>Clientes</Text>
-                                            <Text style={styles.lenghtText}>25</Text>
+                                    <View style={styles.CardHeader}>
+                                    <Icon name="attach-money" size={28} color="#fff" />
+                                    <Icon name="visibility-off" size={28} color="#fff" />
+                                    </View>
+                                    <View style={styles.Card}>
+                                        <View style={styles.TextosStart}>
+                                        <Text style={styles.CardlText}>Valor à pagar hoje</Text>
+                                        <Text style={styles.CardlTexthigh}>R$ 1.000,00</Text>
+                                        </View>
+                                        
+                                        <View style={styles.TextosEnd}>
+                                            <Text style={styles.CardrText}>Clientes</Text>
+                                            <Text style={styles.CardrTexthigh}>2</Text>
                                         </View>
                                     </View>
-                                    <Text style={styles.textFooter}>Clientes cadastrados</Text>
+                                    <Text style={styles.CardFooter}>Contas a pagar hoje</Text>
                                 </View>
                             </TouchableOpacity>
                             
                         </View>
 
 
-
+                        
                       
 
 
                     </ScrollView>
                 }
             </View>
+            <View style={styles.containerFloat}>
+                    <TouchableOpacity
+                        style={styles.CartButton}
+                        onPress={() => navigation.navigate("Pessoas", { id_reg: '0' })}
+                    >
+                        <Icon name="add-circle-outline" size={35} color="#fff" />
+                    </TouchableOpacity>
+                </View>
         </View>
 
     )

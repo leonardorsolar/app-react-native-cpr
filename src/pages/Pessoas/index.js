@@ -1,23 +1,19 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-
 import { ActivityIndicator, FlatList, Image, TextInput, TouchableOpacity, View, Dimensions, Alert } from 'react-native';
 import { styles } from './style';
-import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/core';
-
-import api from '../../services/api';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+//import api from '../../services/api';
 import Cardclientes from '../../components/CardPessoas';
 
 
 const Clientes: React.FC = () => {
 
-    
-
     const navigation: any = useNavigation();
 
-    const [clientes, setClientes] = useState<any>([]);
+    //const [lista, setLista] = useState<any>([]);
     const [loading, setLoading] = useState(false);
     const [page, setPage] = useState(1);
     const [totalItems, setTotalItems] = useState(0);
@@ -28,15 +24,15 @@ const Clientes: React.FC = () => {
 
         
         try {
-            const response = await api.get(`clientes/listar_clientes.php?pagina=${page}&limite=10`);
+            //const response = await api.get(`clientes/listar.php?pagina=${page}&limite=15`);
 
-            if(clientes.length >= response.data.totalItems) return;
+            //if(lista.length >= response.data.totalItems) return;
 
             if (loading === true) return;
       
             setLoading(true);
       
-            setClientes([...clientes, ...response.data.resultado]);
+            //setLista([...lista, ...response.data.resultado]);
             setPage(page + 1);
           } catch (error) {
             console.log(error)
@@ -63,14 +59,12 @@ const Clientes: React.FC = () => {
     }
 
     async function Search() {
-       const response = await api.get(`clientes/buscar_clientes.php?buscar=${busca}`);
+       const response = await api.get(`clientes/buscar.php?buscar=${busca}`);
        
-       setClientes(response.data.clientes);
+      // setLista(response.data.itens);
     }
 
-    useEffect(() => {
-        loadData();
-    }, [page, totalItems, clientes]);
+   
 
     return (
         <View style={styles.container}>
@@ -79,11 +73,11 @@ const Clientes: React.FC = () => {
                     <TouchableOpacity
                         style={styles.menu}
                         onPress={() => navigation.goBack()}
-                    >
-                        <Ionicons name="md-arrow-back-circle-outline" size={35} color="#000" />
+                    > 
+                         <Icon name="arrow-back" size={28} color="gray" />
                     </TouchableOpacity>
 
-                    <Image style={styles.logo} source={require('../../assets/logo2.png')} />
+                    <Image style={styles.logo} source={require('../../assets/logo.png')} />
                 </View>
             </View>
 
@@ -91,7 +85,7 @@ const Clientes: React.FC = () => {
                 <View style={styles.containerSearch}>
                     <TextInput
                         style={styles.search}
-                        placeholder="Pesquise algum cliente."
+                        placeholder="Pesquisar Clientes."
                         placeholderTextColor="gray"
                         keyboardType="default"
                         onChangeText={(busca) => setBusca(busca)}
@@ -103,13 +97,13 @@ const Clientes: React.FC = () => {
                         style={styles.iconSearch}
                         onPress={() => Search()}
                     >
-                        <Ionicons name="search-outline" size={28} color="gray" />
+                        <Icon name="add-circle-outline" size={28} color="gray" />
                     </TouchableOpacity>
                 </View>
 
                 <View style={{ flex: 1, height: Dimensions.get('window').height + 30, }}>
                     <FlatList
-                        data={clientes}
+                       // data={lista}
                         renderItem={renderItem}
                         keyExtractor={item => String(item.id)}
                         onEndReachedThreshold={0.1}
@@ -141,7 +135,7 @@ const Clientes: React.FC = () => {
                         style={styles.CartButton}
                         onPress={() => navigation.navigate("NovaPessoa", { id_reg: '0' })}
                     >
-                        <Ionicons name="add-outline" size={35} color="#fff" />
+                        <Icon name="add-circle-outline" size={35} color="#fff" />
                     </TouchableOpacity>
                 </View>
             </View>
