@@ -5,8 +5,6 @@ import { Button, View, Text } from 'react-native';
 import Routes from './src/routes';
 
 
-
-
 function App() {
   return (
     <>

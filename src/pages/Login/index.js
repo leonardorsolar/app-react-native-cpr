@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/core";
 import React, {useEffect, useState} from 'react';;
 import {styles} from './style';
 import {
@@ -13,8 +14,22 @@ import {
 
   export default function Login({}) {
 
+    // 0 - carregando, 1 - logado, 2 - deslogado
+  
 
-    const [ email, senha ] = useState('');
+    const navigation: any = useNavigation();
+
+    const [logged, setLogged] = useState(0);
+    const [email, setEmail] = useState('');
+    const [senha, setSenha] = useState('');
+
+      async function login(){
+              
+              navigation.reset({
+                index: 0,
+                routes: [{ name: 'Home' }]
+              });   
+          } 
 
       return(
         <View style={styles.container}>
@@ -39,8 +54,8 @@ import {
           />
   
           <TouchableOpacity
-            style={styles.loginSave}
-            onPress={Login}
+           style={styles.loginSave}
+           onPress={login}
           >
             <Text style={styles.text}>Entrar</Text>
           </TouchableOpacity>
