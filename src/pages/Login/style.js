@@ -33,7 +33,7 @@ export const styles = StyleSheet.create({
     loginSave:{
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: '#1656ec',
+      backgroundColor: '#3fa110',
       marginTop: 15,
       width: '100%',
       height: 50,

@@ -2,14 +2,18 @@ import { StyleSheet } from "react-native";
 import colors from "../../styles/colors";
 import fonts from "../../styles/fonts";
 
+
+
 export const styles = StyleSheet.create({
     container:{
         flex: 1,
+        backgroundColor: '#fff',
+
     },
 
     header:{
         
-        backgroundColor: '#fafafa',
+        backgroundColor: colors.heading,
         shadowColor: 'rgba(0, 0, 0, 0.1)',
         shadowOpacity: 0.1,
         elevation: 6,
@@ -67,7 +71,7 @@ export const styles = StyleSheet.create({
     },
 
     lenghtText:{
-        color: colors.green, 
+        color: '#fff', 
         fontSize: 35, 
         fontFamily: fonts.text,
     },
@@ -102,7 +106,7 @@ export const styles = StyleSheet.create({
     },
 
     box:{
-        backgroundColor: 'white',
+        backgroundColor: '#72c600',
         justifyContent: 'space-between',
         flexDirection: 'row',
         padding: 15,
@@ -119,7 +123,7 @@ export const styles = StyleSheet.create({
 
     rText:{
         fontSize: 20,
-        color: 'gray',
+        color: '#fff',
         fontFamily: fonts.text,
     },
 
@@ -128,8 +132,8 @@ export const styles = StyleSheet.create({
         paddingTop: 15, 
         paddingBottom: 10, 
         borderTopWidth: 1,
-        color: '#454545',
-        backgroundColor: '#ddd',
+        color: '#fff',
+        backgroundColor: '#4f9b2a',
         textAlign: 'center',
         fontSize: 15,
         borderBottomLeftRadius: 15,

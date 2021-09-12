@@ -74,7 +74,7 @@ export default function Home() {
 
 
     return (
-        <View style={{ flex: 1 }}>
+        <View  style={styles.container}>
             <StatusBar barStyle="light-content" />
 
             <View style={{ flex: 1 }}>
@@ -85,11 +85,11 @@ export default function Home() {
                             style={styles.menu}
                             onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
                         >
-                           <Icon name="menu" size={40} color="black" /> 
+                           <Icon name="menu" size={40} color="white" /> 
                             
                         </TouchableOpacity>
 
-                        <Image style={styles.logo} source={require('../../assets/logo2.png')} />
+                        <Image style={styles.logo} source={require('../../assets/logo3.png')} />
 
                     </View>
                 </View>
@@ -119,8 +119,8 @@ export default function Home() {
                                 size={100}
                                 width={10}
                                 fill={10}
-                                tintColor="#00e0ff"
-                                backgroundColor="#e0e0e0"
+                                tintColor="#72c600"
+                                backgroundColor="#ececec"
                                 lineCap={"round"}
                             >
                                 {
@@ -129,7 +129,26 @@ export default function Home() {
                                     )
                                 }
                             </AnimatedCircularProgress>
+                    </View>
+
+                    <View style={styles.containerBox}>
+
+                            <TouchableOpacity onPress={() => navigation.navigate("Pessoas")}>
+                                <View>
+                                    <View style={styles.box}>
+                                        <Icon style={styles.iconRegistered} name="people-alt" size={70} color="#fff" />
+                                        <View style={styles.textos}>
+                                            <Text style={styles.rText}>Clientes</Text>
+                                            <Text style={styles.lenghtText}>25</Text>
+                                        </View>
+                                    </View>
+                                    <Text style={styles.textFooter}>Clientes cadastrados</Text>
+                                </View>
+                            </TouchableOpacity>
+                            
                         </View>
+
+
 
                       
 

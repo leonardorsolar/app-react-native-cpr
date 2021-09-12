@@ -2,8 +2,11 @@ export default {
     green: '#32B768',
     green_dark: '#2B7A4B',
     green_light: '#DAF2E4',
+    green1: '#64c832',
   
-    heading: '#52665A',
+    heading: '#72c600',
+    heading2: '#46b415',
+    
     body_dark: '#738078',
     body_light: '#AAB2AD',
   
