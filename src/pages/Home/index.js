@@ -2,13 +2,17 @@ import React, { useEffect, useState } from 'react';
 
 
 import {
+    SafeAreaView,
     Text,
     View,
     ScrollView,
     TouchableOpacity,
     Image,
+    ActivityIndicator,
     RefreshControl,
     StatusBar,
+    AsyncStorage,
+    Alert,
     
 } from 'react-native';
 
@@ -22,12 +26,13 @@ import { AnimatedCircularProgress } from 'react-native-circular-progress';
 import Load from '../../components/Load';
 import { useIsFocused } from '@react-navigation/native';
 
-
+//import Load from '../../components/Load';
+//import { useIsFocused } from '@react-navigation/native';
 
 
 export default function Home() {
     const navigation: any = useNavigation();
-    const isFocused = useIsFocused();
+    //const isFocused = useIsFocused();
 
     //const [dados, setDados] = useState<any>([]);
     const [isLoading, setIsLoading] = useState(true);
@@ -35,9 +40,7 @@ export default function Home() {
     //const [usu, setUsu] = React.useState('');
 
 
-    useEffect(() => {
-        listarDados();
-    }, []);
+    
 
 
     async function listarDados() {

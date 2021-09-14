@@ -5,8 +5,8 @@ import { Button, View, Text } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 
+import Home from '../pages/Home'
 import Login from '../pages/Login';
-import Home from '../pages/Home';
 import Pessoas from '../pages/Pessoas';
 import NovaPessoa from '../pages/NovaPessoa';
 
@@ -17,11 +17,12 @@ function StackNavigator(){
   return (
   
        <Stack.Navigator screenOptions={{headerShown: false}}>
-        <Stack.Screen name="Login" component={Login} options={{ title: 'Login' }} />
-        <Stack.Screen name="Home" component={Home} options={{ title: 'Home' }} /> 
-        <Stack.Screen name="Pessoas" component={Pessoas} options={{ title: 'Pessoas' }} /> 
-        <Stack.Screen name="NovaPessoa" component={NovaPessoa} options={{ title: 'NovaPessoa' }} />  
-      </Stack.Navigator>
+            <Stack.Screen name="Login" component={Login} />
+            <Stack.Screen name="Home" component={Home} /> 
+            <Stack.Screen name="Pessoas" component={Pessoas} />
+            <Stack.Screen name="NovaPessoa" component={NovaPessoa} />
+            
+        </Stack.Navigator>
    
   );
 }

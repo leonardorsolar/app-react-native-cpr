@@ -12,6 +12,8 @@ import {
   AsyncStorage,
 } from 'react-native';
 
+import api from '../../services/api';
+
   export default function Login({}) {
 
     // 0 - carregando, 1 - logado, 2 - deslogado
@@ -23,13 +25,29 @@ import {
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
 
-      async function login(){
-              
-              navigation.reset({
-                index: 0,
-                routes: [{ name: 'Home' }]
-              });   
-          } 
+    async function login(){
+      // recupero o email e a senha
+      const obj = { email, senha };
+ 
+      // crio o resultado  que será enviado para API
+      //post será enviado para api (services/api.ts) um objeto
+      const res = await api.post('login/login.php', obj);
+     
+      // ao recuperar as informações faço...
+      if(res.data.success === 'Dados Incorretos!'){
+        // sem permissão para acessar
+        Alert.alert('Ops!', 'Coloque o seus dados corretamente nos campos.');
+      }else{
+        // storage e recupera o id
+        await AsyncStorage.setItem('@user', JSON.stringify(res.data.result[0].id));
+       
+        // se sim, ecaminhar para Home
+        navigation.reset({
+          index: 0,
+          routes: [{ name: 'Home' }]
+        });
+      }
+    }
 
       return(
         <View style={styles.container}>

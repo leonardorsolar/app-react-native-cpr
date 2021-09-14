@@ -47,7 +47,7 @@ const CustomDrawer: React.FC = () => {
                             navigation.dispatch(DrawerActions.closeDrawer())
                         }}
                     >
-                        <Icons style={styles.iconRegistered} name="Home" size={30} color="gray" />
+                        <Icon style={styles.iconRegistered} name="Home" size={30} color="gray" />
 
                         <Text style={styles.PagesText}>Home</Text>
                     </TouchableOpacity>
@@ -63,7 +63,7 @@ const CustomDrawer: React.FC = () => {
                             navigation.dispatch(DrawerActions.closeDrawer())
                         }}
                     >
-                        <Icons style={styles.iconRegistered} name="people-alt" size={30} color="gray" />
+                        <Icon style={styles.iconRegistered} name="people-alt" size={30} color="gray" />
 
                         <Text style={styles.PagesText}>Clientes</Text>
                     </TouchableOpacity>
@@ -79,7 +79,7 @@ const CustomDrawer: React.FC = () => {
                             navigation.dispatch(DrawerActions.closeDrawer())
                         }}
                     >
-                        <Icons style={styles.iconRegistered} name="dashboard" size={30} color="gray" />
+                        <Icon style={styles.iconRegistered} name="dashboard" size={30} color="gray" />
 
                         <Text style={styles.PagesText}>Categorias</Text>
                     </TouchableOpacity>
@@ -95,7 +95,7 @@ const CustomDrawer: React.FC = () => {
                             navigation.dispatch(DrawerActions.closeDrawer())
                         }}
                     >
-                        <Icons style={styles.iconRegistered} name="outbox" size={30} color="gray" />
+                        <Icon style={styles.iconRegistered} name="outbox" size={30} color="gray" />
 
                         <Text style={styles.PagesText}>Produtos</Text>
                     </TouchableOpacity>

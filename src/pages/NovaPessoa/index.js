@@ -4,7 +4,7 @@ import { Alert, Picker, Text, TextInput, View, TouchableOpacity, ActivityIndicat
 import { RouteProp, useNavigation, useRoute } from '@react-navigation/core';
 import { RectButton } from 'react-native-gesture-handler';
 
-import Icon from 'react-native-vector-icons/MaterialIcons';;
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import { styles } from './styles';
 //import { Success } from '../../lotties/Success';
